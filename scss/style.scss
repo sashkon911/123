@@ -1,0 +1,297 @@
+@font-face {
+	font-family: "Nunito";
+	src: url("/fonts/Nunito-Regular.woff2") format("woff2"),
+		url("/fonts/Nunito-Regular.woff") format("woff");
+	font-display: swap;
+	font-weight: 400;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: "Nunito";
+	src: url("/fonts/Nunito-Bold.woff2") format("woff2"),
+		url("/fonts/Nunito-Bold.woff") format("woff");
+	font-display: swap;
+	font-weight: 700;
+	font-style: normal;
+}
+
+*,
+*::before,
+*::after {
+	margin: 0;
+	padding: 0;
+	border: none;
+	box-sizing: border-box;
+}
+
+body {
+	font-family: "Nunito";
+	font-size: 18px;
+	line-height: 1.2;
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+}
+
+li {
+	list-style: none;
+}
+
+a {
+	color: inherit;
+	text-decoration: none;
+}
+
+img {
+	width: 100%;
+	height: auto;
+	vertical-align: top;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-weight: inherit;
+	font-size: inherit;
+}
+
+input,
+button,
+textarea {
+	font-family: inherit;
+	font-size: inherit;
+	font-weight: inherit;
+}
+
+button {
+	cursor: pointer;
+	color: inherit;
+	background-color: inherit;
+}
+
+input {
+	width: 100%;
+}
+
+
+[class*=__container] {
+	max-width: 1260px;
+	margin: 0 auto;
+	padding: 0px 20px;
+	width: 100%;
+}
+
+//==============================================================================
+
+.header {
+	position: fixed;
+	width: 100%;
+	height: 86px;
+	z-index: 20;
+	background-color: #fff;
+
+	// .header__container
+
+	&__container {
+		display: flex;
+		justify-content: space-between;
+		gap: 20px;
+		align-items: center;
+		align-self: center;
+	}
+
+	// .header__logo
+
+	&__logo {
+		img {
+			min-width: 170px;
+		}
+	}
+
+	// .header__menu
+
+	&__menu {}
+}
+
+.menu {
+
+	// .menu__body
+
+	&__body {}
+
+	// .menu__list
+
+	&__list {
+		display: flex;
+		gap: 30px;
+	}
+
+	// .menu__item
+
+	&__item {}
+
+	// .menu__link
+
+	&__link {
+		position: relative;
+		transition: color 0.3s ease 0s;
+		padding-bottom: 2px;
+
+		&::after {
+			content: '';
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			width: 0;
+			transition: width 0.3s ease 0s;
+			height: 2px;
+			background-color: #b30027;
+			border-radius: 10px;
+		}
+
+		@media (any-hover: hover) {
+			&:hover {
+				color: #b30027;
+
+				&::after {
+					content: '';
+					width: 100%;
+				}
+			}
+		}
+
+	}
+}
+
+//==============================================================================
+
+.about-us {
+	background-color: #83797b8e;
+	// .about-us__container
+
+	&__container {
+		padding-top: 150px;
+		display: flex;
+		justify-content: space-between;
+	}
+
+	// .about-us__content
+
+	&__content {
+		max-width: 600px;
+
+	}
+
+	// .about-us__title
+
+	&__title {
+		font-size: 38px;
+		margin-bottom: 30px;
+	}
+
+	// .about-us__text
+
+	&__text {
+		margin-bottom: 20px;
+		line-height: 1.4;
+	}
+
+	// .about-us__image
+
+	&__image {
+		img {
+			max-width: 500px;
+		}
+	}
+}
+
+//==============================================================================
+.our-services {
+
+	// .our-services__container
+
+	&__container {
+		padding-top: 70px;
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		gap: 50px;
+		align-items: center;
+		align-self: center;
+	}
+
+	// .our-services__body
+
+	&__body {}
+
+	// .our-services__image
+
+	&__image {
+		max-width: 400px;
+	}
+
+	// .our-services__title
+
+	&__title {
+		font-size: 35px;
+		text-align: center;
+	}
+
+	// .our-services__text
+
+	&__text {
+		line-height: 1.4;
+		text-align: center;
+	}
+}
+
+//==============================================================================
+
+.page {
+
+	// .page__container
+
+	&__container {
+		padding-top: 100px;
+
+	}
+
+	// .page__body
+
+	&__body {
+		align-items: center;
+		justify-content: space-between;
+		display: flex;
+		gap: 50px;
+	}
+
+	// .page__content
+
+	&__content {}
+
+
+
+	// .page__image
+
+	&__image {
+		max-width: 500px;
+	}
+
+	// .page__title
+
+	&__title {
+		text-align: center;
+		font-size: 35px;
+	}
+
+	// .page__text
+
+	&__text {
+		text-align: center;
+		line-height: 1.4;
+		max-width: 600px;
+	}
+}
